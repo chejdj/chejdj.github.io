@@ -172,7 +172,7 @@ protected final void publishProgress(Progress... values) {
 ```  
 我们可以看到其实AsyncTask实现线程之间的转换，还是通过Handler去实现的，`postResult`和`publishProgress`都是，它会默认获取主线程的Handler。  
 最后一张图总结一下  
-![流程图](https://github.com/chejdj/Blog_images/blob/master/2018-04-11/asynctask.png)
+![流程图](https://github.com/chejdj/chejdj.github.io/raw/master/assets/blog_image/2018-04-11/asynctask.png)
 
 #### FutureTask  
 看到这里，你会发现传入线程的是FutureTask类型，而不是我们熟悉的Runnable对象（FutureTask中又引入了Callable对象）其实FutureTask实现了RunnableFuture接口，而RunnableFuture有继承了Runnable,Future接口，接口也是可以向上转型，也就可以充当runnable执行，这里介绍一下Future  

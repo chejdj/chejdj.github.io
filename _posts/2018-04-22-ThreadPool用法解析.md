@@ -35,6 +35,7 @@ ThreadPoolExecutor 是线程类的实现类，我们可以通过它实现自定�
 Executor executor=new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue)
 }
 ```  
+
 #### 内部逻辑原理  
 ![图片](https://upload-images.jianshu.io/upload_images/944365-90cfd4951a587ebd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)  
 
@@ -69,12 +70,14 @@ b. 逐个调用线程的interrupt（）中断线程（注：无法响应中断�
 shutdown：设置 线程池的状态 为 SHUTDOWN，然后中断所有没有正在执行任务的线程  
 shutdownNow：设置线程池的状态 为 STOP，然后尝试停止所有的正在执行或暂停任务的线程，并返回等待执行任务的列表  
 使用建议：一般调用shutdown（）关闭线程池；若任务不一定要执行完，则调用shutdownNow（）  
+
 #### Java内部实现好了的4类功能线程池  
 根据参数的不同配置，Java最常见的线程池有4类，其实这四个线程池都是通过`ThreadPoolExecutor`调整6个参数而创建而成    
 1. 定长线程池（FixedThreadPool）  
 2. 定时线程池（ScheduledThreadPool)  
 3. 可缓存线程池（CachedThreadPool）  
 4. 单线程化线程池（SingleThreadExecutor）  
+
 ##### 定长线程池(FixedThreadPool)  
 1. 特点：只有核心线程 & 不会被回收、线程数量固定、任务队列无大小限制（超出的线程任务会在队列中等待）
 2. 应用场景：控制线程最大并发数
@@ -102,7 +105,6 @@ ExecutorService fixThreadPool=Executors.newFixedThreadPool(3);//最大并发量�
 //这个程序最多只有三个线程在执行
 ```  
 
-  
 ##### 定时线程池（ScheduledThreadPool ）  
 1. 特点：核心线程数量固定、非核心线程数量无限制（闲置时马上回收）
 2. 应用场景：执行定时 / 周期性 任务
@@ -126,14 +128,15 @@ ScheduledExecutorService scheduleThreadpool=Executors.newScheduledThreadPool(3);
 	};
 	scheduleThreadpool.schedule(task, 1,TimeUnit.SECONDS);//延迟一秒执行任务
 	scheduleThreadpool.scheduleAtFixedRate(task, 10, 2000, TimeUnit.MILLISECONDS);//延迟 10ms 周期的执行
-```  
+```   
+
 ##### 可缓存线程池（CachedThreadPool）  
 1. 特点：只有非核心线程、线程数量不固定（可无限大）、灵活回收空闲线程（具备超时机制，全部回收时几乎不占系统资源）、新建线程（无线程可用时）源码中显示是通过60s回收线程
 2. 任何线程任务到来都会立刻执行，不需要等待
 3. 应用场景：执行大量、耗时少的线程任务
 使用：通过Executors.newCachedThreadPool()创建  
 示例：
-```
+```  
 ExecutorService cachedThreadPool=Executors.newCachedThreadPool();
 	 Runnable task=new Runnable() {
 			
@@ -149,9 +152,9 @@ ExecutorService cachedThreadPool=Executors.newCachedThreadPool();
 				}
 			}
 		};
-		for(int i=0;i<10;i++)
-			cachedThreadPool.execute(task);  //直接创建10个线程执行		
-```  
+		for(int i=0;i<10;i++)//直接创建10个线程执行	
+			cachedThreadPool.execute(task);```
+
 ##### 单线程化线程池（SingleThreadExecutor）  
 1. 特点：只有一个核心线程（保证所有任务按照指定顺序在一个线程中执行，不需要处理线程同步的问题）
 2. 应用场景：不适合并发但可能引起IO阻塞性及影响UI线程响应的操作，如数据库操作，文件操作等
@@ -176,7 +179,6 @@ ExecutorService singleThradPool=Executors.newSingleThreadExecutor();
 		for(int i=0;i<10;i++)
 			singleThradPool.execute(task);//只有一个线程执行，执行完之后才执行下一个任务
 ```  
-
 
 #### 常见线程池 总结 & 对比  
 ![图片](https://upload-images.jianshu.io/upload_images/944365-5d6a2497f809d62a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)  

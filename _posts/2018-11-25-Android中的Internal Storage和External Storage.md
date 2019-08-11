@@ -27,18 +27,20 @@ tags:
 * auto 首选安装在internal，internal不够，安装在External  
 * internalOnly: 默认值，只安装在internal部分，不足安装失败  
 * preferExternal: 和auto相反  
+
 #### 详细介绍  
 1. internal storage
 内部存储的路径为 `data/data/< package name >/files/ ` ,我们可以在AndroidStudio的Device File explore中查看，数据库文件，preference都存储在这里  
 2. external storage  
 存储路径为 `mnt/sdcard/Android/data/< package name >/files/…`  
 3. 相关API介绍  
+
 **对于Internal路径的API如下**：  
 * getFilesDir() 返回一个File,代表我们APP的internal目录，卸载时自动删除  
 (` /data/data/cn.xxx.xxx(当前包)/files `) 
 * getCacheDir() 返回一个File,代表我们app的internal的缓存目录  
-(` /data/data/cn.xxx.xxx(当前包)/cache `),这个文件目录并不会被在被卸载的时候删除，所以我们需要开发人员需要自己保证在不需要的时候删除，并且对大小进行合理限制，毕竟internal的存储大小有限  
-  
+(` /data/data/cn.xxx.xxx(当前包)/cache `),这个文件目录并不会被在被卸载的时候删除，所以我们需要开发人员需要自己保证在不需要的时候删除，并且对大小进行合理限制，毕竟internal的存储大小有限。  
+
 **对于External路径的API介绍**  
 对于外部存储，我们有区分为两种
 * Public file： 这个是用户和其他APP是可以访问的，而且在卸载的时候不删除的  
@@ -47,9 +49,10 @@ tags:
 * `getExternalFilesDir(Environment.DIRECTORY_PICTURES)`这个获取外部Private类型的数据，卸载的时候会被删除  
 对于这个指定文件的类型，我个人认为是我们在使用MediaStore扫描本机媒体文件的时候，就去这些文件夹去查看  
 (tips： 就比如我们在使用Glide图片缓存的时候，其实我个人更加倾向于使用getExternalFilesDir，在卸载的时候应该去掉缓存，我也越来越理解，打开手机个人文件，里面很多文件都是乱七八糟，很多都是没有自己在用户卸载的时候就直接留在那里，我觉得我们还是有必要自己清除的)  
+
 #### 其他获取文件API介绍  
-![code](/assets/blog_image/internal_and_external_storage/1.png)  
-![log](/assets/blog_image/internal_and_external_storage/2.png)  
+![code](https://github.com/chejdj/chejdj.github.io/raw/master/assets/blog_image/internal_and_external_storage/1.png)  
+![log](https://github.com/chejdj/chejdj.github.io/raw/master/assets/blog_image/internal_and_external_storage/2.png)  
 `Environment.getRootDirectory()` 获取系统目录  
 `/storage/emulated/0/....`  外部存储  
 `/data/...`  内部存储

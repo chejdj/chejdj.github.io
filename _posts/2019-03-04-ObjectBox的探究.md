@@ -164,6 +164,7 @@ private String name;
 * **IndexType.HASH**使用32位的hash值去构建索引，相比较64，hash冲突可能出现，但是实际并不会有性能上影响，优先使用这个
 * **IndexType.HASH64**使用64位long类型去构建索引，这个需要更过的存储空间，往往不是最好的选择
 (5) `@Unique`表明在数据库当中，这个属性的值为唯一,否则抛出`UniqueViolationException`  
+
 ##### 数据之间的关系  
 这个关系定义为：对象指向其他的对象，他们之间就叫有关系，有两种关系**To one ，To many**，这里需要注意两个概念**source object**定义关系的对象，**target object**被引用的关系对象  
 ###### **To-one**关系  
