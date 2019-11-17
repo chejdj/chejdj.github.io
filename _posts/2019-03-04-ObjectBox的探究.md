@@ -1,4 +1,5 @@
 ---
+layout: post
 title: ObjectBox的探究
 date: 2019-03-04 09:30:00
 categories: 

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: ListView和RecycleView的区别
 date: 2018-03-26 15:54:00
 categories:

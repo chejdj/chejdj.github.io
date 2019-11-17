@@ -1,4 +1,5 @@
 ---
+layout: post
 title: View中requestLayout和Invalidate源码分析
 date: 2018-04-02 16:15:00
 categories:

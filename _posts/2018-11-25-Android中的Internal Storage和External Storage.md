@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Andoid中的internal Strorage和 External Storage
 date: 2018-11-25 19:00:00
 categories: 
@@ -51,8 +52,8 @@ tags:
 (tips： 就比如我们在使用Glide图片缓存的时候，其实我个人更加倾向于使用getExternalFilesDir，在卸载的时候应该去掉缓存，我也越来越理解，打开手机个人文件，里面很多文件都是乱七八糟，很多都是没有自己在用户卸载的时候就直接留在那里，我觉得我们还是有必要自己清除的)  
 
 #### 其他获取文件API介绍  
-![code](https://github.com/chejdj/chejdj.github.io/raw/master/assets/blog_image/internal_and_external_storage/1.png)  
-![log](https://github.com/chejdj/chejdj.github.io/raw/master/assets/blog_image/internal_and_external_storage/2.png)  
+![code](/img/in_post/internal_and_external_storage/1.png)  
+![log](/img/in_post/internal_and_external_storage/2.png)  
 `Environment.getRootDirectory()` 获取系统目录  
 `/storage/emulated/0/....`  外部存储  
 `/data/...`  内部存储

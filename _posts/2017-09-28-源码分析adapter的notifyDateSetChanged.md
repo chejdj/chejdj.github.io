@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 源码分析adapter的notifyDataSetChanged
 date: 2017-09-28 18:26:51
 categories: 
