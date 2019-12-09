@@ -18,6 +18,7 @@ tags:
 2. ObjectBox是第一个高性能,**NoSQL**，并且**兼容ACID**的边缘数据库
 3. 目前已经有**8万**多个APP使用ObjectBox,
 4. ObjectBox比我们经常使用的SQlite数据库快10倍。  
+下图是每秒钟，ObjectBox插入数据的速度   
 ![数据库测试图](https://objectbox.io/wordpress/wp-content/uploads/2018/06/performance-front-page.png)  
 5. 当数据更改时，不需要做手动的迁移
 6. 多平台支持，C,java,swift,go
