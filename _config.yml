@@ -99,10 +99,44 @@ page-mathjax: false
 # Friends
 friends: [
     {
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
         title: "mnbrace",
         href: "https://mnbrace.github.io"
-    }
+    },
+    {
+    title: "Gityuan - MiUI",
+    href: "http://gityuan.com/"
+  },{
+    title: "刘望舒",
+    href: "http://liuwangshu.cn/"
+  },{
+    title: "张磊 - 安居客",
+    href: "https://BaronZ88.github.io"
+  },{
+    title: "何家成 - 微信团队",
+    href: "https://blog.csdn.net/carson_ho"
+  },{
+    title: "鸿洋",
+    href: "https://blog.csdn.net/lmj623565791"
+  },{
+    title: "徐宜生",
+    href: "https://juejin.im/user/57de4f970bd1d00057f3646f/posts"
+  },{
+    title: "程序亦非猿",
+    href: "https://github.com/AlanCheen"
+  },{
+    title: "glumes - 纸上浅谈(公众号)",
+    href: "https://glumes.com/"
+  },{
+    title: "JessYan",
+    href: "https://juejin.im/user/57a9dbd9165abd0061714613"
+  },{
+    title: "jasongj",
+    href: "http://www.jasongj.com/tags/Java/"
+  },{
+    title: "红橙Darren",
+    href: "https://www.jianshu.com/u/35083fcb7747"
+  },{
+    title: "北斗星_And - 瓜子二手车",
+    href: "https://juejin.im/user/5d2ef4f7f265da1bb47d9a07/posts"
+  }
 ]
