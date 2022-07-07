@@ -1,11 +1,11 @@
 ---
 layout: post
 title: GoolgePlay模块分发方案调研
-date: 2022-07-07 17:00:00
+date: 2022-07-07 18:00:00
 categories: 
 - Android
 tags:
--GooglePlay
+- GooglePlay
 ---  
 
 ## Play Feature Delivery 概览
